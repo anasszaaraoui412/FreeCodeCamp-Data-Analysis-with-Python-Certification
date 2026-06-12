@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.env
+test.db
+
+# Node
+node_modules/
+.next/
+out/
+build/
+dist/
+.vercel
+*.log
+
+# OS
+.DS_Store
