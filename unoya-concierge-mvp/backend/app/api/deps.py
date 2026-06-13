@@ -17,11 +17,18 @@ async def get_current_user(
 
         user = db.query(User).filter(User.email == email).first()
         if not user:
-            # Auto-create user in mock mode for convenience?
-            # Or just fail if not found. Let's fail for now to be strict.
-            raise HTTPException(status_code=404, detail="User not found")
+            # Auto-create user in mock mode for convenience to avoid deadlock
+            user = User(
+                email=email,
+                first_name="Mock",
+                last_name="User",
+                role=UserRole(role) if role in [r.value for r in UserRole] else UserRole.employee,
+                is_active=True
+            )
+            db.add(user)
+            db.commit()
+            db.refresh(user)
 
-        # Verify role matches if specified (optional)
         return user
 
     # TODO: Implement Clerk Auth verification here

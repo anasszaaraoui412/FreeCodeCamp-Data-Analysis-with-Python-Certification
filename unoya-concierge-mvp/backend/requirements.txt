@@ -6,6 +6,7 @@ alembic
 pydantic
 pydantic-settings
 python-multipart
+livekit-api
 pytest
 requests
 python-jose[cryptography]

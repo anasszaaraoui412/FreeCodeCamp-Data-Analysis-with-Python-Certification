@@ -10,6 +10,11 @@ class Settings(BaseSettings):
     CLERK_API_URL: str = "https://api.clerk.dev/v1"
     CLERK_SECRET_KEY: str = ""
 
+    # LiveKit
+    LIVEKIT_API_KEY: str = "devkey"
+    LIVEKIT_API_SECRET: str = "secret"
+    LIVEKIT_URL: str = "ws://localhost:7880"
+
     class Config:
         case_sensitive = True
 
