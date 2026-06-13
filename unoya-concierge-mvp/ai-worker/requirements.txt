@@ -1,0 +1,4 @@
+livekit-agents[anam]>=1.5
+livekit-plugins-openai
+python-dotenv
+asyncio

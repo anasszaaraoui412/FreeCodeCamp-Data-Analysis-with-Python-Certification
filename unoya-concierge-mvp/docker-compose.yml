@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: unoya-db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: unoya
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    container_name: unoya-adminer
+    restart: always
+    ports:
+      - "8080:8080"
+
+  livekit:
+    image: livekit/livekit-server:latest
+    container_name: unoya-livekit
+    command: --dev --config /etc/livekit.yaml
+    ports:
+      - "7800:7800"
+      - "7801:7801"
+      - "7880:7880"
+    volumes:
+      - ./livekit.yaml:/etc/livekit.yaml
+
+volumes:
+  postgres_data:

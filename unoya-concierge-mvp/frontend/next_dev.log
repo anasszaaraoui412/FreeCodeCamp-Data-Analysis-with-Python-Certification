@@ -1,0 +1,31 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 532ms
+
+○ Compiling /admin ...
+ GET /admin 200 in 6.4s (next.js: 5.6s, application-code: 816ms)
+ GET /employee 200 in 2.8s (next.js: 2.4s, application-code: 451ms)
+ GET /reception 200 in 781ms (next.js: 669ms, application-code: 112ms)
+ GET /totem 200 in 2.7s (next.js: 2.5s, application-code: 226ms)
+ GET /admin 200 in 1172ms (next.js: 559ms, application-code: 613ms)
+ GET /employee 200 in 326ms (next.js: 38ms, application-code: 288ms)
+ GET /reception 200 in 121ms (next.js: 34ms, application-code: 87ms)
+ GET /totem 200 in 299ms (next.js: 35ms, application-code: 264ms)
+ GET /totem 200 in 79ms (next.js: 7ms, application-code: 72ms)
+ GET /totem 200 in 1475ms (next.js: 142ms, application-code: 1333ms)
+ GET /totem 200 in 1255ms (next.js: 312ms, application-code: 943ms)
+ GET /totem 200 in 93ms (next.js: 6ms, application-code: 87ms)
+[browser] TypeError: Failed to fetch
+    at startSession (src/app/(totem)/totem/page.tsx:54:27)
+  52 |
+  53 |      try {
+> 54 |        const resp = await fetch("http://localhost:8000/api/v1/livekit-token", {
+     |                           ^
+  55 |          headers: {
+  56 |            "X-Mock-Role": "employee",
+  57 |            "X-Mock-User-Email": "totem@unoya.ai" (src/app/(totem)
